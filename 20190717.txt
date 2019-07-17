@@ -12,7 +12,6 @@ sudo vi /etc/hosts
 sudo yum update
 sudo yum install -y wget
 
-
 3. selinux 정지
 상태확인
 sestatus
@@ -37,67 +36,23 @@ sudo service sshd restart
 6. 재접속 후 hostname 변경
 sudo hostnamectl set-hostname m1.com
 hostname
-
+ping 날려서 각 서버 붙는지 확인
 
 2. jdk 1.8 설치 & 환경변수 추가
-	a. yu
-	m install -y vim wget unzip
-	b. cd /tmp
-	c. wget --no-check-certificate --no-cookies - --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.tar.gz
-		a. Local에 이미 다운로드 한 경우 Winscp를 이용하여 업로드
+	yum install -y vim wget unzip
+	cd /tmp
+	yum list java*jdk-devel
+	yum install java-1.7.0-openjdk-devel.x86_64
+	java -version
+	which javac
+	readlink -f /usr/bin/javac
+	/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.221-2.6.18.0.el7_6.x86_64/bin/javac
+	sudo vi ~/.bash_profile
+	export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.221-2.6.18.0.el7_6.x86_64
 
-	   jdk 설치
-	   wget --no-check-certificate --no-cookies - --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/jdk-8u161-linux-x64.tar.gz
-
-	d. ls jdk*
-	e. tar -xvzpf jdk-8u161-linux-x64.tar.gz
-	f. mkdir -p /opt/jdk/1.8.0_161
-	g. mv jdk1.8.0_161/* /opt/jdk/1.8.0_161/
-	h. ln -s /opt/jdk/1.8.0_161 /opt/jdk/current
-	i. install java with alternatives
-	alternatives --install /usr/bin/java java /opt/jdk/1.8.0_161/bin/java 2
-	alternatives --config java
-	
-	There is 1 program that provides 'java'.
-	
-	  Selection    Command
-	-----------------------------------------------
-	*+ 1           /opt/jdk1.8.0_131/bin/java
-	
-	Enter to keep the current selection[+], or type selection number:
-	
-	javac와 jar 명령어 경로도 alternatives 적용 권장
-	At this point JAVA 8 has been successfully installed on your system. 
-	We also recommend to setup javac and jar commands path using alternatives
-	
-	alternatives --install /usr/bin/jar jar /opt/jdk/1.8.0_161/bin/jar 2
-	alternatives --install /usr/bin/javac javac /opt/jdk/1.8.0_161/bin/javac 2
-	alternatives --set jar /opt/jdk/1.8.0_161/bin/jar
-	alternatives --set javac /opt/jdk/1.8.0_161/bin/javac 
+3. ssh 설정(master만)
 
 
-
-	a. vi ~/.bash_profile
-
-	#### HADOOP 2.7.5 #######################
-	
-		export HADOOP_HOME=/opt/hadoop/current
-		export PATH=$PATH:$HADOOP_HOME/bin
-		export PATH=$PATH:$HADOOP_HOME/sbin
-		export HADOOP_CLASSPATH=/opt/hive/current/lib/*.jar:/opt/hadoop/current/lib/*.jar:/opt/hadoop/current/share/hadoop/common/*.jar:/opt/hadoop/current/share/hadoop/hdfs/*.jar:/opt/hadoop/current/share/hadoop/mapreduce/*.jar:/opt/hadoop/current/share/hadoop/yarn/*.jar:/opt/jdk/current/lib/*.jar:/opt/sqoop/current/lib/*.jar:/opt/sqoop/current/*.jar:/opt/hadoop/current/share/hadoop/tools/lib/*.jar
-		
-	#### HADOOP 2.7.5 #######################
-	#### JAVA 1.8.0 #######################
-	
-		export JAVA_HOME=/opt/jdk/current
-		export PATH=$PATH:$JAVA_HOME/bin
-	
-	#### JAVA 1.8.0 #######################
-	
-	b. source ~/.bash_profile
-
-
-3. ssh 설정
 
 
 
