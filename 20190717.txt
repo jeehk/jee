@@ -50,6 +50,7 @@ ping 날려서 각 서버 붙는지 확인
 	sudo vi ~/.bash_profile
 	export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.221-2.6.18.0.el7_6.x86_64
 	source ~/.bash_profile
+	echo $JAVA_HOME
 
 3. ssh 설정(master만)
 
