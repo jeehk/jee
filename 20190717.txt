@@ -38,7 +38,7 @@ sudo hostnamectl set-hostname m1.com
 hostname
 ping 날려서 각 서버 붙는지 확인
 
-2. jdk 1.8 설치 & 환경변수 추가
+7. jdk 1.8 설치 & 환경변수 추가
 	yum install -y vim wget unzip
 	cd /tmp
 	yum list java*jdk-devel
@@ -50,7 +50,7 @@ ping 날려서 각 서버 붙는지 확인
 	sudo vi ~/.bash_profile
 	export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.221-2.6.18.0.el7_6.x86_64
 
-3. ssh 설정(master만)
+8. ssh 설정(master만)
 
 
 
