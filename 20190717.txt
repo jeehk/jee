@@ -1,3 +1,4 @@
+https://github.com/lyan-lee/SKCC_BIGDATA_EX
 
 --5개 서버 공통--
 1. Setup /etc/hosts (All nodes)
