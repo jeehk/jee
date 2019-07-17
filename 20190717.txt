@@ -38,7 +38,7 @@ sudo hostnamectl set-hostname m1.com
 hostname
 ping 날려서 각 서버 붙는지 확인
 
-2. jdk 1. 7설치 & 환경변수 추가
+7. jdk 1. 7설치 & 환경변수 추가
 	yum install -y vim wget unzip
 	cd /tmp
 	yum list java*jdk-devel
@@ -52,7 +52,21 @@ ping 날려서 각 서버 붙는지 확인
 	source ~/.bash_profile
 	echo $JAVA_HOME
 
-3. ssh 설정(master만)
+
+8. ssh 설정
+ssh-keygen
+cd ~/.ssh
+ssh-copy-id centos@m1
+ssh-copy-id centos@cm
+ssh-copy-id centos@d1
+ssh-copy-id centos@d2
+ssh-copy-id centos@d3
+ssh m1
+ssh cm
+ssh d1
+ssh d2
+ssh d3
+
 
 
 
