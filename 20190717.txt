@@ -11,7 +11,7 @@ sudo vi /etc/hosts
 2. yum update
 sudo yum update
 sudo yum install -y wget
-sudo yum install -y vim wget unzip
+
 
 3. selinux 정지
 상태확인
