@@ -218,7 +218,7 @@ use problem7;
 
 SELECT * FROM
 (
-  select concat(lname,' ',fname) as name
+  select concat(fname,' ',lname) as name
     from employee
     where city='Seattle'
 ) as emp
