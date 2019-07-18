@@ -9,6 +9,11 @@ PART2 - 빅데이터 테스트
 insert overwrite table cc_data select * from cc_data where sv_acnt_num <> 'SV_ACNT_NUM';
 ```
 
+--create select table 
+```
+create table staging as select * from movies where movie_id is null and movie_comments is null and point is null;
+```
+
 --drop table
 ```
 Drop TABLE IF EXISTS MVNO_REQ_DATA;
@@ -101,3 +106,4 @@ sqoop export (hdfs --> mysql)
 ```
 이때는 mysql에 table 미리 생성해야 함
 ```
+
