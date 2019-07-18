@@ -112,7 +112,7 @@ WHERE REQ_ID = '5'
 이때는 hdfs에 디렉토리 미리 생성되어 있으면 오류
 ```
 
-sqoop export (hdfs --> mysql)
+--sqoop export (hdfs --> mysql)
 ```
 이때는 mysql에 table 미리 생성해야 함
 ```
