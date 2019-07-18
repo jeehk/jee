@@ -283,3 +283,52 @@ select a.id as id,
 #### 10.1 creating view 'solution'
 
 #### 10.2  view 테이블 조회 총 96건 확인
+
+
+
+### 11) Creating a database view
+default db 사용
+Write the report query in the local file /home/training/problem11/solution.sql
+Executing the solution.sql script from the hive command-line tools should generate the report output
+
+#### 11.1 a. TOP3 dualcore product(Which top three products has Dualcore sold more of than any other?)
+```
+SELECT A.brand,
+       A.name,
+       COUNT(A.prod_id) AS cnt
+  FROM products A
+  JOIN order_details B
+    ON (A.prod_id = B.prod_id)
+ WHERE A.brand = 'Dualcore'
+ GROUP BY brand, name, A.prod_id
+ ORDER BY cnt DESC
+ LIMIT 3;
+```
+
+#### 11.2  Calculating Revenue and Profit – write a query to show Dualcore’s revenue (total price of products sold) and profit (price minus cost) by date.
+```
+SELECT TO_DATE(order_date) as date,
+       SUM(price) AS revenue,
+       SUM(price - cost) as profit
+  FROM products A
+  JOIN order_details B
+    ON (A.prod_id = B.prod_id)
+  JOIN orders C
+    ON (B.order_id = C.order_id)
+ WHERE A.brand = 'Dualcore'
+ GROUP BY TO_DATE(order_date)
+ ORDER BY date;
+```
+
+#### 11.3  TOP 10 출력: Calculating the order Total – Which ten orders had the highest total dollar amounts?
+```
+SELECT A.order_id,
+       SUM(B.price) AS total
+  FROM order_details A
+  JOIN products B
+    ON (A.prod_id = B.prod_id)
+  GROUP BY order_id
+  ORDER BY total DESC
+  LIMIT 10;
+```
+
