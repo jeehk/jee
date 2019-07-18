@@ -4,6 +4,11 @@ PART1 - 빅데이터 클러스터 구축
 PART2 - 빅데이터 테스트
 
 #### hive tip
+--hive hql 콘솔에서 수행
+```
+hive -f movies.hql
+```
+
 --업데이트 대신 테이블 reload
 ```
 insert overwrite table cc_data select * from cc_data where sv_acnt_num <> 'SV_ACNT_NUM';
