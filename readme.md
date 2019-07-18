@@ -110,6 +110,14 @@ WHERE REQ_ID = '5'
 --sqoop import (mysql --> hdfs)
 ```
 이때는 hdfs에 디렉토리 미리 생성되어 있으면 오류
+
+sqoop import \
+--connect jdbc:mysql://cm.com:10000 \
+--username training \
+--password training \
+--table solution \
+--export-dir /user/training/problem8/data/customer  \
+--input-fields-terminated-by '\t'
 ```
 
 --sqoop export (hdfs --> mysql)
