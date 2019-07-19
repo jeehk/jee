@@ -38,5 +38,16 @@
 
 ![ui1](/images/training_hdfs.png)
 
+
+
 ## 2. In MySQL create the sample tables that will be used for the rest of the test
+
+![ui1](/images/db_test.png)
+
+![ui1](/images/posts.png)
+
+![ui1](/images/authors.png)
+
+![ui1](/images/user.png)
+
 
