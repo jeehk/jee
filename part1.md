@@ -32,9 +32,9 @@
 
 #### 3) Install Cloudera Manager
 
-![ui1](/images/ui0.png)
+![ui1](/images/1_1.png)
 
-![ui1](/images/ui1.png)
+![ui1](/images/1_2.png)
 
 ![ui1](/images/training_hdfs.png)
 
