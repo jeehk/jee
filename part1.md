@@ -1,22 +1,8 @@
-# PART1 - 빅데이터 클러스터 구축 (07/17)
-
-
-### 실습목표
-
-- System Configuration Checks
-
-- MariaDB Installation
-
-- Cloudera Manager Install
-
-- Install a cluster and deploy CDH
-
-  
+# PART1 - 빅데이터 클러스터 구축 (07/18)
 
 ### 환경구성
-
 - CENTOS 7
-- JDK 1.78
+- JDK 1.8
 - CDH 5.15
 
 
@@ -35,21 +21,16 @@
 호스트5		ssh -i /c/Users/SKCC/Desktop/bigdata/SKCC.pem centos@15.164.68.100
 ```
 
-![aws_chk](/images/aws_chk.png)
-
-
-
-
 
 #### 2)  HOSTS 파일 수정
 
 ```
 $ sudo vi /etc/hosts
-172.31.3.35		m1.com m1
-172.31.11.79	cm.com cm
-172.31.7.199	d1.com d1
-172.31.9.132	d2.com d2
-172.31.8.76		d3.com d3
+172.31.47.51	m1.com m1
+172.31.47.167	cm.com cm
+172.31.33.184	d1.com d1
+172.31.36.32	d2.com d2
+172.31.43.253	d3.com d3
 ```
 
 ![hosts](/images/hosts.png)
