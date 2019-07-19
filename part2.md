@@ -1,7 +1,7 @@
 # PART2 - 빅데이터 분석 (07/18)
 
 #### 1) 
-![user_training](/images/user_training.png)
+![user_training](/images/pt2_1.png)
 #### 2) 
 #### 3) 
 #### 4) 
